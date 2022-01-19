@@ -11,6 +11,8 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +23,7 @@
     <header>
         <div class="container">
             <div id="logo">
-                <img src="img/logo.png">
+                <a href="#"><img src="img/logo.png"></a>
             </div>
             <div id="search-container">
                 <input type="text" placeholder="Search" name="search" class="search">
@@ -33,8 +35,9 @@
             </div>
         </div>    
     </header>
-    <div class="line"></div>
+    
     <nav>
+        <div class="line"></div>
         <div class="container">
             <ul class="menu">
                 <li><a href="#">HOME</a></li>
@@ -52,7 +55,21 @@
     <section>
         <div class="container">
             <div class="event">
-                <a href="#"><img src="img/event.png" alt="event" class="eventimg"></a>
+                <ul class="slide">
+                    <li>
+                        <a href="#"><img src="img/event.png" alt="event" class="eventimg"></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><img src="img/dune.png" alt="event" class="eventimg"></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><img src="img/chihiro.png" alt="event" class="eventimg"></a>
+                    </li>
+                </ul>
+                <!-- <span class="prev"><i class="fas fa-chevron-left"></i></span>    
+                <span class="next"><i class="fas fa-chevron-right"></i></span>   -->
             </div>
             <h3 class="newbook">신간 도서</h3>
 
@@ -172,7 +189,7 @@
                     var str2=str.substring(0,60);
 
                     $(".box").eq(i).append("<p class='price'>"+str1+"원</p>");
-                    $(".box").eq(i).append("<br>"+'<div class="new">'+"NEW"+"</div>");
+                    $(".box").eq(i).append('<div class="new">'+"NEW"+"</div>");
 
                     
                 }
@@ -198,7 +215,7 @@
                     var str2=str.substring(0,60);
 
                     $(".boxx").eq(i).append("<p class='price'>"+str1+"원</p>");
-                    $(".boxx").eq(i).append('<div class="sold">'+"SOLD OUT"+"</div>");
+                    // $(".boxx").eq(i).append('<div class="sold">'+"SOLD OUT"+"</div>");
                 }
             });
 
@@ -251,25 +268,25 @@
                     var str2=str.substring(0,60);
 
                     $(".boxxxx").eq(i).append("<p class='price'>"+str1+"원</p>");
+                    $(".boxxxx").eq(i).append('<div class="ebook">'+"eBook"+"</div>");
+                    $(".boxxxx").eq(i).append('<div class="event2">'+"EVENT"+"</div>");
                     
                 }
             });
 
-        //     // three
-        //     $.ajax({
-        //     method:"GET",
-        //     url:"https://dapi.kakao.com/v3/search/book?target=title",
-        //     data:{query:"남미요양기"},
-        //     headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
-        // })
-        //     .done(function(msg){
+      
 
-        //         // 1
-        //         $(".boxxxx").eq(0).append("<img src='"+msg.documents[0].thumbnail+"'/>");
-        //         $(".boxxxx").eq(0).append("<h4>"+msg.documents[0].title+"</h4>");
-        //         $(".boxxxx").eq(0).append("<h6>"+msg.documents[0].authors[0]+"</6>");
-        //     });
 
+            // slider
+
+        function slide(){
+            $('.slide').stop().animate({marginLeft:-820},function(){
+            $('.slide li:first').appendTo('.slide');
+            $('.slide').css({marginLeft:0});
+            });
+        }
+
+        setInterval(slide,3500);
 
     </script>
 </body>
