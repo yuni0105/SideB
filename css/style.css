@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
 
 *{margin:0; padding:0;}
 ul,li,ol{list-style: none;}
@@ -40,19 +44,71 @@ header .container{display: flex;
     font-size: 15px;
     line-height: 1.6;
     letter-spacing: 0px;
-    font-weight:100;
-    font-style: normal;
-    font-family: 'Gilroy', sans-serif;}
+    font-weight:300;
+    font-family: 'Montserrat', sans-serif;}
 a:hover{color:#337ab7;}    
-section{width:100%; height:2500px;}
+section{width:100%; height:2700px;}
 
+section .container {position: relative;}
 .first{width:100%; height:1810px; 
     padding-top:30px;
     display: flex; justify-content: space-evenly;
     flex-wrap: wrap; flex-direction: row;
     align-items: center;
    }
-.box{width:195px; height:440px; background-color: lavender;}
+.event{width:80%; height:175px; 
+    margin:100px 0 0px 140px;
+    position:relative;
+    } 
+
+.eventimg{width:80%; height:auto;
+            position:absolute;
+            left:10%;} 
+
+.event2{width:80%; height:175px; 
+        margin:100px 0 0px 140px;
+        position:relative;
+        background-color: #e34b64;
+         } 
+.duneimg{width:80%; height:auto;
+            position:absolute;
+            left:10%;}                      
+
+.newbook {position:absolute; top:8.5%; left:2%;}          
+    
+.box,.boxx,.boxxx,.boxxxx {width:195px; height:350px; 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+   }
+
+.box img, .boxx img, .boxxx img { width:80%; height:auto; }
+
+.price {font-size:13px;}
+
+.new{width:60px; height:20px; 
+    color:white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:small;
+    font-weight:400;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #363636;}
+
+
+.sold{width:60px; height:20px; 
+    color:white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:10px;
+    font-weight:400;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e34b64;}
+
 
 .second{width:100%; height:370px; 
     display: flex; justify-content: space-evenly;

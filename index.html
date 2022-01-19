@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -44,6 +51,11 @@
 
     <section>
         <div class="container">
+            <div class="event">
+                <a href="#"><img src="img/event.png" alt="event" class="eventimg"></a>
+            </div>
+            <h3 class="newbook">신간 도서</h3>
+
             <div class="first">
                 <div class="box"></div>
                 <div class="box"></div>
@@ -51,24 +63,32 @@
                 <div class="box"></div>
                 <div class="box"></div>
                 <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
+
+
+                <div class="boxx"></div>
+                <div class="boxx"></div>
+                <div class="boxx"></div>
+                <div class="boxx"></div>
+                <div class="boxx"></div>
+                <div class="boxx"></div>
+
+                <div class="boxxx"></div>
+                <div class="boxxx"></div>
+                <div class="boxxx"></div>
+                <div class="boxxx"></div>
+                <div class="boxxx"></div>
+                <div class="boxxx"></div>
+
+
+                <!-- <div class="event2">
+                    <a href="#"><img src="img/dune.png" alt="dune" class="duneimg"></a>
+                </div> -->
+                <div class="boxxxx"></div>
+                <div class="boxxxx"></div>
+                <div class="boxxxx"></div>
+                <div class="boxxxx"></div>
+                <div class="boxxxx"></div>
+                <div class="boxxxx"></div>
             </div>
 
             <div class="second">
@@ -127,5 +147,130 @@
             </span>
         </div>
     </footer>
+
+    <script>
+        // one
+        $.ajax({
+            method:"GET",
+            url:"https://dapi.kakao.com/v3/search/book?target=title",
+            data:{query:"지역의사생활"},
+            headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
+        })
+            .done(function(msg){
+                var boxs=document.getElementsByClassName('box');
+                
+                for (var i=0; i<boxs.length; i++){
+                    $(".box").eq(i).append('<a href="#">'+"<img src='"+msg.documents[i].thumbnail+"'/>"+"</a>");
+                    $(".box").eq(i).append("<h4>"+'<a href="#">'+msg.documents[i].title+"</a>"+"</h4>");
+                    $(".box").eq(i).append("<h6>"+msg.documents[i].authors+"</h6>");
+
+                
+
+
+                    var str=msg.documents[i].contents;
+                    var str1=msg.documents[i].sale_price.toLocaleString()
+                    var str2=str.substring(0,60);
+
+                    $(".box").eq(i).append("<p class='price'>"+str1+"원</p>");
+                    $(".box").eq(i).append("<br>"+'<div class="new">'+"NEW"+"</div>");
+
+                    
+                }
+            });
+            
+            // two
+            $.ajax({
+            method:"GET",
+            url:"https://dapi.kakao.com/v3/search/book?target=title",
+            data:{query:"지금만화"},
+            headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
+        })
+            .done(function(msg){
+                var boxs=document.getElementsByClassName('box');
+
+                for (var i=0; i<boxs.length; i++){
+                    $(".boxx").eq(i).append('<a href="#">'+"<img src='"+msg.documents[i].thumbnail+"'/>"+"</a>");
+                    $(".boxx").eq(i).append("<h4>"+'<a href="#">'+msg.documents[i].title+"</a>"+"</h4>");
+                    $(".boxx").eq(i).append("<h6>"+msg.documents[i].authors+"</h6>");
+
+                    var str=msg.documents[i].contents;
+                    var str1=msg.documents[i].sale_price.toLocaleString()
+                    var str2=str.substring(0,60);
+
+                    $(".boxx").eq(i).append("<p class='price'>"+str1+"원</p>");
+                    $(".boxx").eq(i).append('<div class="sold">'+"SOLD OUT"+"</div>");
+                }
+            });
+
+
+
+            // three
+    
+            $.ajax({
+            method:"GET",
+            url:"https://dapi.kakao.com/v3/search/book?target=title",
+            data:{query:"후쿠시 치히로"},
+            headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
+        })
+            .done(function(msg){
+                var boxs=document.getElementsByClassName('box');
+
+                for (var i=0; i<boxs.length; i++){
+                    $(".boxxx").eq(i).append('<a href="#">'+"<img src='"+msg.documents[i].thumbnail+"'/>"+"</a>");
+                    $(".boxxx").eq(i).append("<h4>"+'<a href="#">'+msg.documents[i].title+"</a>"+"</h4>");
+                    $(".boxxx").eq(i).append("<h6>"+msg.documents[i].authors+"</h6>");
+
+                    var str=msg.documents[i].contents;
+                    var str1=msg.documents[i].sale_price.toLocaleString()
+                    var str2=str.substring(0,60);
+
+                    $(".boxxx").eq(i).append("<p class='price'>"+str1+"원</p>");
+                    
+                    
+                }
+            });
+
+            // four
+    
+                        $.ajax({
+            method:"GET",
+            url:"https://dapi.kakao.com/v3/search/book?target=title",
+            data:{query:"듄"},
+            headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
+        })
+            .done(function(msg){
+                var boxs=document.getElementsByClassName('box');
+
+                for (var i=0; i<boxs.length; i++){
+                    $(".boxxxx").eq(i).append('<a href="#">'+"<img src='"+msg.documents[i].thumbnail+"'/>"+"</a>");
+                    $(".boxxxx").eq(i).append("<h4>"+'<a href="#">'+msg.documents[i].title+"</a>"+"</h4>");
+                    $(".boxxxx").eq(i).append("<h6>"+msg.documents[i].authors+"</h6>");
+
+                    var str=msg.documents[i].contents;
+                    var str1=msg.documents[i].sale_price.toLocaleString()
+                    var str2=str.substring(0,60);
+
+                    $(".boxxxx").eq(i).append("<p class='price'>"+str1+"원</p>");
+                    
+                }
+            });
+
+        //     // three
+        //     $.ajax({
+        //     method:"GET",
+        //     url:"https://dapi.kakao.com/v3/search/book?target=title",
+        //     data:{query:"남미요양기"},
+        //     headers:{Authorization:"KakaoAK e1f4630262a63b326fe66a5b0120ef00"}
+        // })
+        //     .done(function(msg){
+
+        //         // 1
+        //         $(".boxxxx").eq(0).append("<img src='"+msg.documents[0].thumbnail+"'/>");
+        //         $(".boxxxx").eq(0).append("<h4>"+msg.documents[0].title+"</h4>");
+        //         $(".boxxxx").eq(0).append("<h6>"+msg.documents[0].authors[0]+"</6>");
+        //     });
+
+
+    </script>
 </body>
 </html>
