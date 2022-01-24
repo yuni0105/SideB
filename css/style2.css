@@ -237,7 +237,9 @@
         align-items: center;
         text-align: center;}  
         
-    .info2 img{width:750px; height:auto;}   
+    .info2 img{width:750px; height:auto;}
+    .info2 p{line-height: 30px;}   
+    
     .tempbox{width:1000px; height:600px;
     }
     .tempbox p{line-height: 30px;}
