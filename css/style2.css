@@ -5,9 +5,7 @@
 
 
 
-.notosanskr * { 
-    font-family: 'Noto Sans KR', sans-serif;
-   }
+
 
 
    @font-face {
@@ -32,8 +30,8 @@
    
    header{width:100%; height:84px;
        opacity: 0.8;
-       position: fixed;
        z-index:100;
+       position: fixed;
        background-color: white;
       }
    header .container{display: flex;
@@ -58,7 +56,8 @@
        font-size:28px;
        opacity: 0.3;}
    
-   .line{width:100%; height:1px; position:fixed; z-index:101;
+   .line{width:100%; height:1px; z-index:101;
+        position: fixed;
        background-color: #b2b2b2;}
 
     nav{width:100%; height:200px; 
@@ -89,7 +88,7 @@
 
    
 
-    section{width:100%; height:2700px; 
+    section{width:100%; height:1330px; 
         display: flex;
         justify-content: center;
        }
@@ -121,12 +120,44 @@
     .text3{font-size: small;}     
 
      .shop{width:100%; height:410px;}
-     .box1{width:100%; height:70px; 
+     .box1{width:100%; height:120px; 
         display: flex;
         align-items: center;}
-     .box2{width:100%; height:190px; }
+     .box2{width:100%; height:140px; 
+        display: flex;
+        justify-content: center;
+        text-align: left;
+}
+     .price{width:550px; height:100%; 
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+}
+       
+
+    .price table:not(.total){width:100px; height:95px; 
+        }   
+
+    .total{margin-top: 30px; float: right;} 
+    .price_sum{float:right;}   
+
+     .amount{width:140px; height:35px; background-color: white; 
+        border:1px solid #d7d7d7; }
+     .price_value{width:58px; height:35px; background-color: white; 
+        text-align: center;
+        border:1px solid #d7d7d7;
+    border-width: 0px 1px;}
+
+     .minus, .plus{width:30px; height:35px;
+        cursor: pointer;
+         text-align: center;}
+     
+     .border{width:200px; height:35px; 
+        background-color: white; border:1px solid #d7d7d7;}
+
      .box3{width:100%; height:150px; 
         display: flex;
+        flex-direction: column;
         justify-content: center;
         }
 
@@ -135,17 +166,106 @@
         justify-content: space-evenly;
         }
     .one{width:167px; height:46px; color:white; 
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition:all 0.5s ease;
+        font-family: 'Noto Sans KR', sans-serif;
         background-color: #363636; border-radius: 3px;}
+
+    .one:hover{background-color: black;}    
     .two, .three{width:167px; height:46px; color:#363636; 
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white; border-radius: 3px; border:0.5px solid #363636; }
+        cursor: pointer;
+        transition:all 0.5s ease;
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: white; border-radius: 3px; border:1px solid #d7d7d7; }
+    
+    .two:hover, .three:hover{border:1px solid black;} 
+
+    .naver{width:550px; height:50px; 
+        margin:10px 0 0 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}   
+
+    .pay {width:88%; height:46px; cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px; color:white; background-color:#00c73c;}   
+    
+    .pay img{width:110px; height:auto;}    
+    .wish{width:46px; height:46px; 
+        border:1px solid #e5e5e5;
+        border-radius: 3px;
+        color:#00c73c;
+        font-family: 'Noto Sans KR', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }     
     
 
+    #wrap{width:100%; height:2800px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+    .boxwrap{width:100%; height:2100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+ 
+  }  
+         
+    .info2{width:1000px; height:1400px; 
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;}  
+        
+    .info2 img{width:750px; height:auto;}   
+    .tempbox{width:1000px; height:600px;}
+
+    #review {width:1200px; height:400px; margin:50px auto 0; 
+    }
+    #review1{width:1200px; height:80px; margin: auto 0;}
+    #review ul, #review1 ul {width:1200px; height:35px; margin:40px auto 0px;}
+    #review ul > li {width:598px; height:100%; background-color:#f9f9f9; float:left; 
+        text-align:center; padding:15px 0 0 0px; 
+        border:1px solid #ebebeb; border-bottom:1px solid #ebebeb; font-size:13px;}
+    #review1 ul > li {width:1200px; height:100%; background-color:#f9f9f9; float:left; 
+        text-align:center; padding:15px 0 0 0px; 
+        border:1px solid #ebebeb; border-bottom:1px solid #ebebeb; font-size:13px; }
+
+    #review > ul > li:nth-child(1) {background-color:#fff; border:1px solid #ebebeb; border-bottom:none;} 
+    #review1 > ul >li:first{background-color:#f9f9f9; border:1px solid #ebebeb; border-bottom:none;} 
+       
+
+    #review_tablebox table th {width:80px; border-bottom:1px solid #eee; color:#333}
+    #review_tablebox table td:first-of-type {width:770px; border-bottom:1px solid #eee;}
+    #review_tablebox table td:first-of-type > a {color:#333;}
+    #review_tablebox table td:nth-of-type(2) {width:80px; text-align:center; border-bottom:1px solid #eee;}
+    #review_tablebox table td:nth-of-type(3) {width:120px; text-align:center; border-bottom:1px solid #eee;}
+    #review_tablebox table td:last-of-type {width:260px; text-align:center; border-bottom:1px solid #eee;}
+
+    #review > #review_tablebox > button {float:right; margin:25px 0px; width:120px; height:30px; color:#fff; font-size:12px; background-color:#363636; border:1px solid #ddd;}
+    #review > #review_tablebox > button:hover {cursor:pointer;}
+
+    #review > #review_tablebox > table {display:inline-block; margin:0px auto; border-top:1px solid #ebebeb; line-height:50px; width:1200px; font-size:13px; color:#333;}    
 
    footer{width:100%; height:133px; 
    }
@@ -153,4 +273,4 @@
     footer .container{display: flex;
     justify-content: center;
     align-items: center;}    
-    footer p {font-size: 12px; text-align: center; font-family: 'Gilroy', sans-serif;}
+    footer p {font-size: 12px; text-align: center;  font-family: 'Noto Sans KR', sans-serif;}

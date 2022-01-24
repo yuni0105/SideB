@@ -20,7 +20,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -99,7 +101,26 @@
                     </div>
 
                     <div class="box2">
-
+                        <div class="price">
+                            <table>
+                                <tr>
+                                    <th>수량</th>
+                                <tr class="amount">
+                                    <th class="border">
+                                        <label class="minus"><b>&nbsp;-</b></label>
+                                        <input type="text" placeholder="1" value="1" class="price_value">
+                                        <label class="plus"><b>+</b></label>
+                                    </th>
+                                </tr>
+                                </tr>
+                            </table> 
+                            <table class="total">
+                                <tr>
+                                    <th>총 상품 금액</th>
+                                    <td class="price_sum"></td>
+                                </tr>
+                            </table>                       
+                        </div>
                     </div>
 
                     <div class="box3">
@@ -113,15 +134,66 @@
                             </div>
 
                             <div class="three">
-
+                                <i class="fas fa-heart"></i>
                             </div>
                         </div>
+
+                        <div class="naver">
+                            <div class="pay"><img src="img/naver.png" alt="naver"> </div>
+                            <div class="wish"><strong>찜</strong></div>
+                        </div>
+                        
                     </div>
+
+
                 </div>
             </div>
         </div>
 
-    </section>
+        </section>
+
+        <!-- <div id="wrap">
+            <div id="review1">
+                <ul>
+                    <li>상세정보</li>
+                </ul>
+            </div>     -->
+
+            <div class="boxwrap">
+                <div class="info2">
+                    <img src="img/book.jpg" alt="book">
+                    <p>2017년 <오늘 하루도 무사히>로 데뷔한 고형주 작가는 나른한 일상의 이야기부터<br> 강렬하고 섬찟한 이야기까지
+                        극과 극을 오가는 만화작업으로 많은 사람들에게 강한 인상을 남겼다.<br>
+                        2020년 미국 출판사 아이언서커스코믹스와 협업한 그래픽 노블 〈비밀독서동아리〉는<br> 2021년 6월 현재 미국에서 가장 권위있는 만화상 아이스너상에 노미네이트 되었고<br>
+                        현재는 리디에서 웹툰〈축제는 이미 시작되었다〉를 연재중이다.
+                    </p>
+                    <iframe width="1000" height="500" src="https://www.youtube.com/embed/BzStlFCvKxo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="tempbox">
+
+                </div>
+            </div>
+
+            <div id="review">
+                <ul>
+                    <li>구매평</li>
+                    <li><a href="#inquiry">Q&A</a></li>
+                </ul>
+
+                <div id="review_tablebox">
+                    <button>구매평 작성</button>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <td><a href="#">아쉽지만 고마운 작품</a></td>
+                            <td>유경진</td>
+                            <td>2022.01.05</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
 
 
     <footer>
@@ -152,6 +224,46 @@
                 $(".text li:nth-of-type(10)").append("<p>"+"<b> ISBN :</b>"+msg.documents[6].isbn+"</p>");
                 
             });
+
+            // textbox
+                $(function () {
+                    $.get("./sub_txt/txt1.txt", function (data) {
+                        $(".tmpbox").html(data);
+                    })
+                });
+
+
+                // price
+                    var price_sum = 9900;
+
+                    $(".price_sum").append("<span>" + price_sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +"원 </span>");
+
+                    //총 상품 금액
+
+                    $(function () {
+                        $('.plus').click(function () {
+                            if ($(".price_value").val() > 999) {
+                                alert("1000권 초과 구매가 불가능합니다.");
+                                $(".price_value").val(1000);
+                            } else {
+                                $(".price_value").val(parseInt($(".price_value").val()) + 1);
+                                var sum = parseInt($(".price_value").val() * price_sum);
+                                $(".price_sum").html("<span>" + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원</span>");
+                            }
+                        });
+
+                        $('.minus').click(function () {
+                            if ($(".price_value").val() < 2) {
+                                alert("1권 이상 구매가 가능합니다.");
+                                $(".price_value").val(2);
+                            }
+                            $(".price_value").val(parseInt($(".price_value").val()) - 1);
+                            var sum = parseInt($(".price_value").val() * price_sum);
+                            $(".price_sum").html("<span>" + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원</span>");
+                        });
+                    });
+
+
 
     </script>
 </body>
