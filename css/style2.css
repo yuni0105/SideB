@@ -238,7 +238,10 @@
         text-align: center;}  
         
     .info2 img{width:750px; height:auto;}   
-    .tempbox{width:1000px; height:600px;}
+    .tempbox{width:1000px; height:600px;
+    }
+    .tempbox p{line-height: 20px;}
+ 
 
     #review {width:1200px; height:400px; margin:50px auto 0; 
     }
