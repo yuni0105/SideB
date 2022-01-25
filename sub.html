@@ -176,8 +176,8 @@
 
             <div id="review">
                 <ul>
-                    <li>구매평</li>
-                    <li><a href="#inquiry">Q&A</a></li>
+                    <li id="reviewclick" class="add">구매평</li>
+                    <li id="qnaclick" >Q&A</li>
                 </ul>
 
                 <div id="review_tablebox">
@@ -189,9 +189,43 @@
                             <td>유경진</td>
                             <td>2022.01.05</td>
                         </tr>
+
+                        <tr>
+                            <th></th>
+                            <td><a href="#">9곳의 지역에서 일어나는 이야기들과 함께 여행하는 느낌으로 본 책 ! 시즌2가 기대되요!</a></td>
+                            <td>오유경</td>
+                            <td>2022.02.25</td>
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <td><a href="#">펀딩을 통해 판매되었다는 소식을 뒤늦게 접하고 아쉬워했는데</a></td>
+                            <td>안지연</td>
+                            <td>2022.01.26</td>
+                        </tr>
                     </table>
+
                 </div>
+
+                <div id="qna">
+                    <div id="inquiry">
+                        <button>상품문의</button>
+                        <button>1:1 문의</button>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td>등록된 문의가 없습니다.</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                
             </div>
+
+            
         </div>
 
 
@@ -263,7 +297,27 @@
                         });
                     });
 
+                    // review
 
+                    $(document).ready(function(){
+                        $("#qnaclick").click(function(){
+                            $("#review_tablebox").hide();
+                            $("#qna").show();
+                            $("#qnaclick").addClass("add");
+                            $("#reviewclick").removeClass("add");
+
+                        });
+
+                        $("#reviewclick").click(function(){
+                            $("#review_tablebox").show();
+                            $("#qna").hide();
+                            $("#reviewclick").addClass("add");
+                            $("#qnaclick").removeClass("add");
+                        });
+                    });
+
+
+                    
 
     </script>
 </body>

@@ -221,7 +221,7 @@
 
 }
 
-    .boxwrap{width:100%; height:2100px;
+    .boxwrap{width:100%; height:2200px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -247,18 +247,17 @@
 
     #review {width:1200px; height:400px; margin:50px auto 0; 
     }
-    #review1{width:1200px; height:80px; margin: auto 0;}
-    #review ul, #review1 ul {width:1200px; height:35px; margin:40px auto 0px;}
-    #review ul > li {width:598px; height:100%; background-color:#f9f9f9; float:left; 
-        text-align:center; padding:15px 0 0 0px; 
-        border:1px solid #ebebeb; border-bottom:1px solid #ebebeb; font-size:13px;}
-    #review1 ul > li {width:1200px; height:100%; background-color:#f9f9f9; float:left; 
-        text-align:center; padding:15px 0 0 0px; 
-        border:1px solid #ebebeb; border-bottom:1px solid #ebebeb; font-size:13px; }
 
-    #review > ul > li:nth-child(1) {background-color:#fff; border:1px solid #ebebeb; border-bottom:none;} 
+    #review ul {width:1200px; height:35px; margin:40px auto 0px; background-color:#f9f9f9;
+        border:1px solid #ebebeb; border-bottom:1px solid #ebebeb;}
+    #review li {width:598px; height:35px; float:left; 
+        text-align:center; padding:15px 0 0 0px; cursor: pointer;
+         font-size:13px;}
+
+
+    /* #review > ul > li:nth-child(1) {background-color:#fff; border:1px solid #ebebeb; border-bottom:none;} 
     #review1 > ul >li:first{background-color:#f9f9f9; border:1px solid #ebebeb; border-bottom:none;} 
-       
+        */
 
     #review_tablebox table th {width:80px; border-bottom:1px solid #eee; color:#333}
     #review_tablebox table td:first-of-type {width:770px; border-bottom:1px solid #eee;}
@@ -271,6 +270,25 @@
     #review > #review_tablebox > button:hover {cursor:pointer;}
 
     #review > #review_tablebox > table {display:inline-block; margin:0px auto; border-top:1px solid #ebebeb; line-height:50px; width:1200px; font-size:13px; color:#333;}    
+
+    /* q&a */
+
+    #qna {width:1200px; height:400px; margin:50px auto 0; display: none; 
+    }
+   
+    
+
+    #inquiry table td{width:770px; border-bottom:1px solid #eee; text-align: center;}
+
+    #qna > #inquiry > button {float:right; margin:25px 0px; width:120px; height:30px; color:#fff; font-size:12px; background-color:#363636; border:1px solid #ddd;}
+    #qna > #inquiry > button:hover {cursor:pointer;}
+
+    #qna > #inquiry > table {display:inline-block; margin:0px auto; border-top:1px solid #ebebeb; line-height:50px; width:1200px; font-size:13px; color:#333;}    
+
+    /* .qnaf{background-color:#fff; border:1px solid #ebebeb; border-bottom:none;}  */
+
+    .add{background-color:white;  border-bottom:none;}
+
 
    footer{width:100%; height:133px; 
    }
